@@ -1,0 +1,106 @@
+'use client';
+
+import React, { ChangeEvent, FormEvent, useState } from 'react';
+import { toast } from "react-hot-toast"
+export default function ContactForm() {
+    const [form, setForm] = useState({
+        fullName: '',
+        email: '',
+        message: '',
+    })
+    const [loading, setLoading] = useState(false);
+
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target
+        setForm(prev => ({
+            ...prev,
+            [name]: value
+        }))
+    }
+
+    const handleSubmit = async (e: FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+
+        try {
+            const res = await fetch('/api/contact', {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(form)
+            });
+
+            const data = await res.json();
+            if (!res.ok) {
+                toast.error(data.error || "Error sending");
+                return;
+            }
+
+            toast.success("Message sent!");
+            setForm({ fullName: "", email: "", message: "" });
+
+        } catch (error) {
+            toast.error("Network error");
+        } finally {
+            setLoading(false);
+        }
+    };
+    return (
+        <div className='bg-gray-900 flex flex-col items-center gap-6 p-6 rounded-2xl'>
+            <h3 className="text-xl font-semibold text-white">Send a message</h3>
+            <form onSubmit={handleSubmit} className='flex flex-col gap-4 w-full'>
+
+                {/* Full Name */}
+                <div className='flex flex-col gap-2'>
+                    <label htmlFor="fullName" className='text-gray-200'>Full Name<span className="text-red-500 ml-0.5">*</span></label>
+                    <input
+                        value={form.fullName}
+                        type="text"
+                        id='fullName'
+                        placeholder='Jon Snow'
+                        name='fullName'
+                        required
+                        onChange={(e) => handleChange(e)}
+                        className='w-full rounded-xl bg-gray-800 border border-gray-700 p-3 text-white 
+                   placeholder-gray-500 focus:outline-none focus:border-blue-500 
+                   focus:ring-2 focus:ring-blue-500/30'
+                    />
+                </div>
+
+                {/* Email */}
+                <div className='flex flex-col gap-2'>
+                    <label htmlFor="email" className='text-gray-200'>Email<span className="text-red-500 ml-0.5">*</span></label>
+                    <input
+                        value={form.email}
+                        type="email"
+                        id='email'
+                        placeholder='hello@gmail.com'
+                        name='email'
+                        required
+                        onChange={(e) => handleChange(e)}
+                        className='w-full rounded-xl bg-gray-800 border border-gray-700 p-3 text-white 
+                   placeholder-gray-500 focus:outline-none focus:border-blue-500 
+                   focus:ring-2 focus:ring-blue-500/30'
+                    />
+                </div>
+
+                {/* Message */}
+                <div className='flex flex-col gap-2'>
+                    <label htmlFor="message" className='text-gray-200'>Message<span className="text-red-500 ml-0.5">*</span></label>
+                    <textarea
+                        value={form.message}
+                        name="message"
+                        id="message"
+                        rows={4}
+                        required
+                        onChange={(e) => handleChange(e)}
+                        className='w-full rounded-xl bg-gray-800 border border-gray-700 p-3 text-white 
+                   placeholder-gray-500 focus:outline-none focus:border-blue-500 
+                   focus:ring-2 focus:ring-blue-500/30 resize-none'
+                    ></textarea>
+                </div>
+                <button className='font-semibold text-white font-sans rounded-full bg-blue-700 transition-colors duration-200 ease-in hover:bg-blue-900 hover:text-gray-200 px-6 py-3 cursor-pointer' type="submit" disabled={loading}>{loading ? "Sending..." : "Send Message"}</button>
+            </form>
+        </div>
+    );
+}
