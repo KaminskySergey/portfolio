@@ -26,7 +26,7 @@ export default function ThemeToggleButton() {
     return (
         <div className='flex items-center justify-center'>
             <button className='cursor-pointer' type='button' onClick={() => setTheme(isDark ? "light" : "dark")}>
-                {isDark ? <Moon className='text-gray-500' /> : <Sun className='text-yellow-500' />}
+                {isDark ? <Moon className='text-gray-300' /> : <Sun className='text-yellow-500' />}
             </button>
         </div>
     );

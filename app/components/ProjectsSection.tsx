@@ -9,13 +9,15 @@ import ProjectTags from './ui/ProjectTags';
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react'
 import { GitHubIcon } from './icons/GitHubIcon';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 export default function ProjectsSection() {
+    useScrollAnimation()
     return (
         <section id="projects" className="py-24 text-white">
             <Container className="flex flex-col items-center gap-10 max-w-6xl">
                 <div className='flex flex-col gap-4 items-center'>
                     <TitleSection title='Featured' subTitle='Works' />
-                    <p className="text-center text-gray-400 font-medium max-w-2xl mx-auto mb-8">
+                    <p className="text-center text-gray-600 dark:text-gray-400 font-medium max-w-2xl mx-auto mb-8">
                         Here are some of my key projects, showcasing my skills in React, Next.js, Tailwind CSS, and TypeScript.
                         You can explore trending apps, web tools, and personal projects I built for learning and practice.
                     </p>
@@ -23,7 +25,8 @@ export default function ProjectsSection() {
                 <ul className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full'>
                     {
                         projectsItems.map((el, idx) => (
-                            <li key={idx}>
+                            <li key={idx}   className="animate-on-scroll opacity-0"
+                            data-anim="fade-in">
                                 <div className='group border border-gray-800  flex flex-col gap-1 bg-gray-900 overflow-hidden rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300'>
                                     <div className="relative w-full h-48 overflow-hidden">
                                         <Image
@@ -42,9 +45,8 @@ export default function ProjectsSection() {
                                     <div className='p-6 flex flex-col gap-4'>
                                         <ProjectTags tags={el.tags} />
 
-                                        <h4 className='font-semibold text-2xl text-center'>{el.name}</h4>
+                                        <h4 className='font-semibold text-white text-2xl text-center'>{el.name}</h4>
                                         <div className="flex flex-wrap justify-center gap-4 mt-2">
-                                            {/* Ссылка на сайт */}
                                             <Link
                                                 href={el.link}
                                                 className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl shadow-md transition-all duration-300 hover:scale-105"
@@ -55,7 +57,6 @@ export default function ProjectsSection() {
                                                 <span>Website</span>
                                             </Link>
 
-                                            {/* Ссылка на GitHub */}
                                             <Link
                                                 href={el.gitHub}
                                                 className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white font-medium rounded-xl shadow-md transition-all duration-300 hover:scale-105"

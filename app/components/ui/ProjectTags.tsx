@@ -12,7 +12,7 @@ export default function ProjectTags({ tags }: IProjectTags) {
             {
                 tags.map((el) => (
                     <li key={el}>
-                        <span className='py-1 px-2 inline-block text-xs font-medium border border-gray-600 rounded-full'>{el}</span>
+                        <span className='py-1 px-2 inline-block text-xs font-medium border text-white  border-gray-600 rounded-full'>{el}</span>
                     </li>
                 ))
             }

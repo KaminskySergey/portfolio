@@ -4,46 +4,49 @@ import { navItems } from '@/app/const/nav-items';
 import React, { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false)
-    const [active, setActive] = useState("#hero")
-    // const [isScrolled, setIsScrolled] = useState(false)
+    const [isMounted, setIsMounted] = useState(false);
+    const [active, setActive] = useState("#hero");
+    const [_, setIsScrolled] = useState(false)
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.screenY > 10)
+        }
 
-    // useEffect(() => {
-    // const handleScroll = () => {
-    //     setIsScrolled(window.screenY > 10)
-    // }
+        window.addEventListener("scroll", handleScroll)
 
-    // window.addEventListener("scroll", handleScroll)
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
 
-    // return () => window.removeEventListener("scroll", handleScroll)
-    // }, [])
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         let current = "#hero"
+    useEffect(() => {
+        const hash = window.location.hash || "#hero";
+        setActive(hash);
+        setIsMounted(true)
+        const handleScroll = () => {
+            let current = hash;
 
-    //         navItems.forEach(item => {
-    //             const section = document.querySelector(item.href) as HTMLElement | null
-    //             if (!section) return
+            navItems.forEach(item => {
+                const section = document.querySelector(item.href) as HTMLElement | null;
+                if (!section) return;
 
-    //             const sectionTop = section.offsetTop - 200
+                const sectionTop = section.offsetTop - 200;
+                if (window.scrollY >= sectionTop) current = item.href;
+            });
 
-    //             if (window.scrollY >= sectionTop) {
-    //                 current = item.href
-    //             }
-    //         })
+            setActive(current);
+        };
 
-    //         setActive(current)
-    //     }
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
-    //     window.addEventListener("scroll", handleScroll)
-    //     return () => window.removeEventListener("scroll", handleScroll)
-    // }, [])
-
-    
     const handleToggle = () => {
         setIsOpen(prev => !prev)
     }
+
     return (
         <nav className="relative z-50">
             {/* Desktop */}
@@ -52,13 +55,13 @@ export default function Navigation() {
                     <li key={index}>
                         <Link href={el.href}>
                             <p
-                                className={`
-    cursor-pointer font-medium relative
-    after:content-[''] after:absolute after:left-0 after:-bottom-1
-    after:h-0.5 after:w-0 after:bg-blue-400 after:transition-all after:duration-300
-    hover:after:w-full
-    ${active === el.href ? "text-blue-400 after:w-full" : ""}
-  `}
+                                className={cn(
+                                    "cursor-pointer font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-blue-400 after:transition-all after:duration-300 hover:after:w-full",
+                                    {
+                                        "text-blue-400 after:w-full": active === el.href,
+                                        "after:w-0 after:transition-none text-white": !isMounted
+                                    }
+                                )}
                             >
                                 {el.name}
                             </p>

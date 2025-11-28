@@ -2,10 +2,10 @@
 
 import { ThemeProvider } from 'next-themes';
 import React, { ReactNode } from 'react';
-import dynamic from 'next/dynamic';
 import StarBackground from '../components/ui/StarBackground';
 import Header from '../components/ui/Header';
 import ToasterProvider from './ToasterProvider';
+import Footer from '../components/ui/Footer';
 
 interface IMainProvider {
   children: ReactNode
@@ -20,6 +20,7 @@ export default function MainProvider({ children }: IMainProvider) {
       <main className='relative z-40'>
         {children}
       </main>
+      <Footer />
     </ThemeProvider>
   );
 }

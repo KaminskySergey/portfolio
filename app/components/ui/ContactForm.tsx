@@ -46,7 +46,7 @@ export default function ContactForm() {
         }
     };
     return (
-        <div className='bg-gray-900 flex flex-col items-center gap-6 p-6 rounded-2xl'>
+        <div className='bg-gray-900 flex flex-col items-center gap-6 p-6 rounded-2xl animate-on-scroll opacity-0' data-anim="slide-right">
             <h3 className="text-xl font-semibold text-white">Send a message</h3>
             <form onSubmit={handleSubmit} className='flex flex-col gap-4 w-full'>
 

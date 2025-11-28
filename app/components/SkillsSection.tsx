@@ -5,10 +5,11 @@ import { Container } from './ui/Container';
 import TitleSection from './ui/TitleSection';
 import { skillCategories, skillItems } from '../const/skills';
 import { capitalizeFirstLetter, cn } from '../utils/utils';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function SkillsSection() {
     const [activeCategory, setActiveCategory] = useState('all')
-
+    useScrollAnimation()
     const handleChangeCategory = (category: string) => {
         setActiveCategory(category)
     }
@@ -39,7 +40,7 @@ export default function SkillsSection() {
                         </li>
                     ))}
                 </ul>
-                <ul className='grid grid-cols-1 gap-4 md:grid-cols-3 w-full'>
+                <ul className='grid grid-cols-1 gap-4 md:grid-cols-3 w-full animate-on-scroll opacity-0' data-anim="fade-in">
                     {filteredSkills.map((skill, idx) => (
                         <li key={idx}>
                             <div className="p-6 rounded-2xl bg-gray-900 shadow-lg border border-gray-800 hover:shadow-xl hover:scale-105 hover:border-gray-700 transition-all duration-300">
