@@ -5,10 +5,11 @@ import { Container } from "./Container";
 import Navigation from "./Navigation";
 import { BriefcaseBusiness } from 'lucide-react'
 import ThemeToggleButton from "./ThemeToggleButton";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 export default function Header() {
     return (
-        <header  className='sticky inset-0 bg-white dark:bg-black z-50 py-5 border-b border-b-white/10  w-full'>
+        <header className='sticky inset-0 bg-white dark:bg-black z-50 py-5 border-b border-b-white/10  w-full'>
             <Container className="flex items-center justify-between">
                 <div >
                     <Link href={'/'} className="flex items-center gap-2 cursor-pointer">
@@ -18,7 +19,10 @@ export default function Header() {
                 </div>
                 <div className="flex items-center justify-center md:gap-32">
                     <Navigation />
-                    <ThemeToggleButton />
+                    <div className="flex items-center justify-center gap-3">
+                        <LocaleSwitcher />
+                        <ThemeToggleButton />
+                    </div>
                 </div>
             </Container>
         </header>

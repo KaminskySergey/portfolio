@@ -1,0 +1,8 @@
+{
+    "hero": {
+        "greeting": "Hi, I'm",
+        "name": "Serhii Kaminskyi",
+        "description": "I`m a Fullstack Developer based in Darmstadt, Germany, creating modern web apps with React, NextJS, and NestJS.\nI love clean code,\nscalable architecture,\nand building smooth user experiences.",
+        "button": "View My Work"
+    }
+}
