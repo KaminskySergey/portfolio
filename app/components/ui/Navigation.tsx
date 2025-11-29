@@ -5,11 +5,17 @@ import React, { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { useTranslations } from 'next-intl';
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false)
     const [isMounted, setIsMounted] = useState(false);
-    const [active, setActive] = useState("#hero");
+    const [active, setActive] = useState(() =>
+        typeof window !== "undefined" ? window.location.hash || "#hero" : "#hero"
+    );
     const [_, setIsScrolled] = useState(false)
+
+    const t = useTranslations()
+
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.screenY > 10)
@@ -21,11 +27,11 @@ export default function Navigation() {
     }, [])
 
     useEffect(() => {
-        const hash = window.location.hash || "#hero";
-        setActive(hash);
-        setIsMounted(true)
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setIsMounted(true);
+
         const handleScroll = () => {
-            let current = hash;
+            let current = window.location.hash || "#hero";
 
             navItems.forEach(item => {
                 const section = document.querySelector(item.href) as HTMLElement | null;
@@ -40,6 +46,7 @@ export default function Navigation() {
 
         window.addEventListener("scroll", handleScroll);
         handleScroll();
+
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
@@ -51,8 +58,8 @@ export default function Navigation() {
         <nav className="relative z-50">
             {/* Desktop */}
             <ul className="hidden md:flex items-center gap-5">
-                {navItems.map((el, index) => (
-                    <li key={index}>
+                {navItems.map((el) => (
+                    <li key={el.key}>
                         <Link href={el.href}>
                             <p
                                 className={cn(
@@ -63,7 +70,7 @@ export default function Navigation() {
                                     }
                                 )}
                             >
-                                {el.name}
+                                {t(`nav.${el.key}`)}
                             </p>
                         </Link>
                     </li>
@@ -87,15 +94,15 @@ export default function Navigation() {
             `}
             >
                 <ul className="flex flex-col gap-8 text-white text-2xl text-center">
-                    {navItems.map((el, index) => (
+                    {navItems.map((el) => (
                         <li
-                            key={index}
+                            key={el.key}
                             onClick={() => setIsOpen(false)}
 
                         >
                             <Link href={el.href}>
                                 <p className='cursor-pointer font-medium hover:text-blue-300 transition-colors'>
-                                    {el.name}
+                                    {t(`nav.${el.key}`)}
                                 </p>
                             </Link>
                         </li>

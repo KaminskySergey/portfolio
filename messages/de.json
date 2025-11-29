@@ -1,8 +1,107 @@
 {
+    "nav": {
+        "home": "Start",
+        "about": "Über mich",
+        "skills": "Fähigkeiten",
+        "projects": "Projekte",
+        "contact": "Kontakt"
+    },
     "hero": {
         "greeting": "Hallo, ich bin",
         "name": "Serhii Kaminskyi",
         "description": "Ich bin ein Fullstack-Entwickler aus Darmstadt, Deutschland, und erstelle moderne Web-Apps mit React, NextJS und NestJS.",
         "button": "Meine Projekte"
+    },
+    "about": {
+        "title": "Über",
+        "subtitle": "Mich",
+        "heading": "Leidenschaftlicher Fullstack-Entwickler",
+
+        "p1": "Ich bin ein Fullstack-Entwickler mit über 3 Jahren Erfahrung in der Entwicklung moderner Webanwendungen mit React, Next.js und NestJS. Ich liebe es, sauberen und skalierbaren Code zu schreiben und nahtlose Benutzererlebnisse zu schaffen.",
+        "p2": "In meiner Laufbahn habe ich sowohl an Frontend- als auch an Backend-Projekten gearbeitet, mit Designern und Entwicklern zusammengearbeitet und hochwertige Produkte geliefert. Ich bin begeistert davon, neue Technologien zu lernen und Prozesse in jedem Projekt zu verbessern.",
+
+        "contactBtn": "Kontakt aufnehmen",
+        "cvBtn": "Lebenslauf herunterladen",
+
+        "card1_title": "Fullstack-Entwickler",
+        "card1_desc": "Ich entwickle responsive Websites und Webanwendungen mit modernen Technologien, mit besonderem Fokus auf Benutzererfahrung und Performance.",
+
+        "card2_title": "Teamplayer / Mitarbeiter",
+        "card2_desc": "Ich arbeite effektiv im Team, nehme an Code-Reviews teil, helfe Workflows zu optimieren und trage zur Entwicklung hochwertiger Produkte bei.",
+
+        "card3_title": "UI- & UX-Enthusiast",
+        "card3_desc": "Ich erstelle intuitive Benutzeroberflächen und nahtlose Interaktionen mit Fokus auf Benutzerfreundlichkeit und Barrierefreiheit."
+    },
+    "skills": {
+        "title": "Meine",
+        "subtitle": "Fähigkeiten",
+        "categories": {
+            "all": "Alle",
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "tools": "Tools"
+        }
+    },
+    "works": {
+        "title": "Ausgewählte",
+        "subtitle": "Projekte",
+        "description": "Hier sind einige meiner wichtigsten Projekte, die meine Fähigkeiten in React, Next.js, Tailwind CSS und TypeScript zeigen. Du kannst trendige Apps, Webtools und persönliche Projekte erkunden, die ich zum Lernen und Üben erstellt habe.",
+        "btnGitHub": "Mein GitHub ansehen",
+        "btnWebsite": "Webseite",
+        "projects": {
+            "on-air-movies": {
+                "description": "Eine Film- und TV-Website unter Verwendung der TheMovieDB API. Nutzer können aktuelle Filme und Serien durchsuchen, nach Filmen, Shows und Schauspielern suchen und Details zu deren Arbeit einsehen."
+            },
+            "todo-app": {
+                "description": "Eine einfache Todo-Anwendung, erstellt mit Next.js, mit sicherer Benutzeranmeldung, Aufgabenverwaltung und einem interaktiven Kalender zur effizienten Organisation von Aufgaben."
+            },
+            "mira-shop": {
+                "description": "Ein kleiner Online-Shop, erstellt mit Next.js und Strapi für das Content-Management. Enthält Produktübersicht, Warenkorb und sichere Benutzeranmeldung."
+            },
+            "power-pulse": {
+                "description": "Eine umfassende Fitness- und Ernährungsplattform, die es Nutzern ermöglicht, ihre Kalorienaufnahme zu verfolgen, ihr Gewicht zu überwachen und personalisierte Trainingsprogramme zu erstellen. Erstellt mit Next.js und Nest.js, bietet sie eine nahtlose und sichere Verwaltung von Gesundheit und täglicher Aktivität."
+            },
+            "goose-track": {
+                "description": "Eine Todo-Anwendung mit Benutzeranmeldung und integrierter Zeiterfassung. Entwickelt mit React, Redux, Node.js und styled-components, hilft sie Nutzern, Aufgaben zu verwalten und ihre Produktivität zu überwachen."
+            },
+            "organick": {
+                "description": "Eine einseitige Landing-Website für einen gesunden Lebensmittel-Shop. Erstellt mit React, Vite und TailwindCSS, zeigt sie eine Auswahl an Bio-Produkten und deren Vorteile auf."
+            },
+            "filmoteka": {
+                "description": "Eine einfache Film-Anwendung, erstellt mit JavaScript und Firebase. Sie bietet Benutzeranmeldung, Filmsuche und die Möglichkeit, Filme zur persönlichen Bibliothek hinzuzufügen."
+            },
+            "web-studio": {
+                "description": "Eine sehr einfache zweiseitige Landing-Website für eine Webfirma. Erstellt mit HTML, SASS und JavaScript, zeigt sie grundlegende Informationen über das Unternehmen und seine Dienstleistungen."
+            }
+        }
+    },
+    "contact": {
+        "title": "Nimm Kontakt",
+        "subtitle": "auf",
+        "description": "Melde dich gerne für Jobmöglichkeiten, Zusammenarbeit oder einfach nur, um Hallo zu sagen!",
+
+        "title_contact": "Kontakt Informationen",
+        "email": "E-Mail",
+        "phone": "Telefon",
+        "location": "Standort",
+        "follow": "Folge mir",
+
+        "sendMessage": "Nachricht senden",
+        "fullName": "Vollständiger Name",
+        "emailForm": "E-Mail",
+        "message": "Nachricht",
+        "send": "Nachricht senden",
+        "sendLoading": "Senden...",
+
+        "ph_fullName": "Jon Snow",
+        "ph_email": "hallo@gmail.com",
+        "ph_message": "Schreibe deine Nachricht… lass sie legendär werden!",
+
+        "errorSending": "Fehler beim Senden",
+        "networkError": "Netzwerkfehler",
+        "sentSuccess": "Nachricht gesendet!"
+    },
+    "footer": {
+        "text": "Alle Rechte vorbehalten."
     }
 }

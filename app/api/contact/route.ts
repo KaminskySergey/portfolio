@@ -42,7 +42,7 @@ Message: ${message}
     }
 
     return NextResponse.json({ ok: true });
-  } catch (error) {
+  } catch (_) {
     return NextResponse.json(
       { error: "Something went wrong" },
       { status: 500 }

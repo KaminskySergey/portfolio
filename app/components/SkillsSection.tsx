@@ -6,19 +6,20 @@ import TitleSection from './ui/TitleSection';
 import { skillCategories, skillItems } from '../const/skills';
 import { capitalizeFirstLetter, cn } from '../utils/utils';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useTranslations } from 'next-intl';
 
 export default function SkillsSection() {
+    const t = useTranslations('skills')
     const [activeCategory, setActiveCategory] = useState('all')
     useScrollAnimation()
     const handleChangeCategory = (category: string) => {
         setActiveCategory(category)
     }
-
-    const filteredSkills = skillItems.filter(el => activeCategory === "all" || activeCategory === el.category)
+    const filteredSkills = skillItems.filter(el => activeCategory === 'all' || activeCategory === el.category)
     return (
         <section id='skills' className='py-24'>
             <Container className='text-black dark:text-white max-w-6xl flex flex-col items-center gap-6 md:gap-12'>
-                <TitleSection title='My' subTitle='Skills' />
+                <TitleSection title={t('title')} subTitle={t('subtitle')} />
                 <ul className='flex gap-3'>
                     {skillCategories.map((el, idx) => (
                         <li key={idx}>
@@ -35,7 +36,7 @@ export default function SkillsSection() {
                                     }
                                 )}
                             >
-                                {capitalizeFirstLetter(el)}
+                                {capitalizeFirstLetter(t(`categories.${el}`))}
                             </button>
                         </li>
                     ))}

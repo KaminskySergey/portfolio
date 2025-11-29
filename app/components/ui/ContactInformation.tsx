@@ -3,11 +3,13 @@ import React from 'react';
 import Link from 'next/link';
 import { Mail, MapPinHouse, Phone } from 'lucide-react'
 import { useScrollAnimation } from '@/app/hooks/useScrollAnimation';
+import { useTranslations } from 'next-intl';
 export default function ContactInformation() {
     useScrollAnimation()
+    const t = useTranslations('contact')
     return (
         <div className='flex flex-col gap-7 animate-on-scroll opacity-0' data-anim="slide-left">
-            <h3 className='text-2xl font-semibold text-center'>Contact Information</h3>
+            <h3 className='text-2xl font-semibold text-center'>{t('title_contact')}</h3>
             <ul className='flex flex-col gap-4'>
 
                 <li>
@@ -17,7 +19,7 @@ export default function ContactInformation() {
                         </div>
 
                         <div className='flex flex-col gap-2'>
-                            <h4 className='text-base font-medium'>Email</h4>
+                            <h4 className='text-base font-medium'>{t('email')}</h4>
                             <Link
                                 href="mailto:serhiikama@gmail.com"
                                 target="_blank"
@@ -36,7 +38,7 @@ export default function ContactInformation() {
                         </div>
 
                         <div className='flex flex-col gap-2'>
-                            <h4 className='text-base font-medium'>Phone</h4>
+                            <h4 className='text-base font-medium'>{t('phone')}</h4>
                             <Link
                                 href="tel:+4915565521833"
                                 target="_blank"
@@ -55,7 +57,7 @@ export default function ContactInformation() {
                         </div>
 
                         <div className='flex flex-col gap-2'>
-                            <h4 className='text-base font-medium'>Location</h4>
+                            <h4 className='text-base font-medium'>{t('location')}</h4>
                             <a
                                 href="https://www.google.com/maps?q=Darmstadt"
                                 target="_blank"
@@ -69,7 +71,7 @@ export default function ContactInformation() {
                 </li>
             </ul>
             <div className="mt-6 md:mt-12 flex flex-col items-center gap-4">
-                <h3 className="text-base font-medium">Follow me</h3>
+                <h3 className="text-base font-medium">{t('follow')}</h3>
 
                 <ul className="flex  -mx-1.5 ">
 

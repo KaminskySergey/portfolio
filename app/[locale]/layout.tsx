@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../../app/globals.css";
 import MainProvider from "../provider/MainProvider";
-import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale, getMessages } from 'next-intl/server'
 import { routing } from "@/i18n/routing";
-import { notFound } from "next/navigation";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -31,7 +30,7 @@ export default async function RootLayout({
   children, params
 }: Readonly<{
   children: React.ReactNode,
-  params: Promise<{ locale: "en" | "de" }>;
+  params: Promise<{ locale: string }>;
 }>) {
   const { locale } = await params
   setRequestLocale(locale);

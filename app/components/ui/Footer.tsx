@@ -4,12 +4,14 @@ import React from 'react';
 import { Container } from './Container';
 import Link from 'next/link';
 import { GitHubIcon } from '../icons/GitHubIcon';
+import { useTranslations } from 'next-intl';
 
 export default function Footer() {
+    const t = useTranslations('footer')
     return (
         <footer className="bg-white relative z-50 dark:bg-black py-6 border-t border-white/10">
             <Container className="text-center text-sm text-gray-600 dark:text-gray-400">
-                <p className='font-medium'>© 2025 Serhii Kaminskyi. All rights reserved.</p>
+                <p className='font-medium'>© 2025 Serhii Kaminskyi. {t('text')}</p>
                 <Link
                     href="https://github.com/KaminskySergey"
                     target="_blank"

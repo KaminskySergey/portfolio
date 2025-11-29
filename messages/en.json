@@ -1,8 +1,107 @@
 {
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
     "hero": {
         "greeting": "Hi, I'm",
         "name": "Serhii Kaminskyi",
         "description": "I`m a Fullstack Developer based in Darmstadt, Germany, creating modern web apps with React, NextJS, and NestJS.\nI love clean code,\nscalable architecture,\nand building smooth user experiences.",
         "button": "View My Work"
+    },
+    "about": {
+        "title": "About",
+        "subtitle": "Me",
+        "heading": "Passionate Fullstack Developer",
+
+        "p1": "I'm a Fullstack Developer with over 3 years of experience building modern web applications using React, Next.js, and NestJS. I love writing clean, scalable code and creating seamless user experiences.",
+        "p2": "During my career, I have worked on both frontend and backend projects, collaborating with designers and developers to deliver high-quality products. I'm passionate about learning new technologies and improving processes in every project I work on.",
+
+        "contactBtn": "Get in Touch",
+        "cvBtn": "Download CV",
+
+        "card1_title": "Fullstack Developer",
+        "card1_desc": "I build responsive websites and web applications using modern technologies, with a strong focus on UX and performance.",
+
+        "card2_title": "Team Player / Collaborator",
+        "card2_desc": "I work effectively in teams, participate in code reviews, help optimize workflows, and contribute to building high-quality products together.",
+
+        "card3_title": "UI & UX Enthusiast",
+        "card3_desc": "I create intuitive interfaces and smooth user interactions, focusing on usability and accessibility."
+    },
+    "skills": {
+        "title": "My",
+        "subtitle": "Skills",
+        "categories": {
+            "all": "All",
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "tools": "Tools"
+        }
+    },
+    "works": {
+        "title": "Featured",
+        "subtitle": "Works",
+        "description": "Here are some of my key projects, showcasing my skills in React, Next.js, Tailwind CSS, and TypeScript. You can explore trending apps, web tools, and personal projects I built for learning and practice.",
+        "btnGitHub": "View My GitHub",
+        "btnWebsite": "Website",
+        "projects": {
+            "on-air-movies": {
+                "description": "A movie and TV show website using TheMovieDB API. Users can browse trending movies and series, search for films, shows, and actors, and view details about their work."
+            },
+            "todo-app": {
+                "description": "A simple Todo application built with Next.js, featuring secure user authentication, task management, and an interactive calendar to organize your tasks efficiently."
+            },
+            "mira-shop": {
+                "description": "A small online store built with Next.js and powered by Strapi for content management. Features product browsing, a shopping cart, and secure user authentication."
+            },
+            "power-pulse": {
+                "description": "A full-featured fitness and nutrition platform that allows users to track their calorie intake, monitor weight, and create personalized workout programs. Built with Next.js, Nest.js, it provides a seamless and secure experience for managing health and daily activity."
+            },
+            "goose-track": {
+                "description": "A todo application with user authentication and built-in time tracking. Developed with React, Redux, Node.js, and styled-components, it helps users manage tasks and monitor their productivity."
+            },
+            "organick": {
+                "description": "A single-page landing website for a healthy food store. Built with React, Vite, and TailwindCSS, it showcases a selection of organic products and highlights their benefits."
+            },
+            "filmoteka": {
+                "description": "A simple movie application built with JavaScript and Firebase. It features user authentication, movie search, and the ability to add films to a personal library."
+            },
+            "web-studio": {
+                "description": "A very simple two-page landing website for a web company. Built with HTML, SASS, and JavaScript, it showcases basic company information and services."
+            }
+        }
+    },
+    "contact": {
+        "title": "Get In",
+        "subtitle": "Touch",
+        "description": "Feel free to reach out for job opportunities, collaboration, or just to say hi!",
+
+        "title_contact": "Contact Information",
+        "email": "Email",
+        "phone": "Phone",
+        "location": "Location",
+        "follow": "Follow me",
+
+        "sendMessage": "Send a message",
+        "fullName": "Full Name",
+        "emailForm": "Email",
+        "message": "Message",
+        "send": "Send Message",
+        "sendLoading": "Sending...",
+
+        "ph_fullName": "Jon Snow",
+        "ph_email": "hello@gmail.com",
+        "ph_message": "Enter your epic message… let's make it legendary!",
+
+        "errorSending": "Error sending",
+        "networkError": "Network error",
+        "sentSuccess": "Message sent!"
+    },
+    "footer": {
+        "text": "All rights reserved."
     }
 }
