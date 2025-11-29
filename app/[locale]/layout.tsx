@@ -32,9 +32,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     metadataBase: new URL(baseUrl),
     keywords,
     icons: {
-      icon: "/favicon.ico",
-      shortcut: "/favicon.ico",
-      apple: "/favicon.ico",
+      icon: "/favicon-v2.ico",
+      shortcut: "/favicon-v2.ico",
+      apple: "/favicon-v2.ico",
     },
     alternates: {
       canonical: "/",
