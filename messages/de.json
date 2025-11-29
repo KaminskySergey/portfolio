@@ -1,4 +1,8 @@
 {
+    "seo": {
+        "title": "Serhii Kaminskyi – Mein Portfolio",
+        "description": "Portfolio von Serhii Kaminskyi – Fullstack-Entwickler."
+    },
     "nav": {
         "home": "Start",
         "about": "Über mich",
