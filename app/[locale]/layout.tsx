@@ -85,7 +85,7 @@ export default async function RootLayout({
   setRequestLocale(locale);
   const messages = await getMessages();
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning data-scroll-behavior="smooth">
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-gray-200 dark:bg-black antialiased`}

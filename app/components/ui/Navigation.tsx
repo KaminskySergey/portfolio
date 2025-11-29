@@ -2,12 +2,17 @@
 
 import { navItems } from '@/app/const/nav-items';
 import React, { useEffect, useState } from 'react';
-import { Menu, X } from 'lucide-react'
+
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
-export default function Navigation() {
-    const [isOpen, setIsOpen] = useState(false)
+
+interface INavigation {
+    isOpen: boolean
+    handleToggle: () => void
+}
+
+export default function Navigation({isOpen, handleToggle}: INavigation) {
     const [isMounted, setIsMounted] = useState(false);
     const [active, setActive] = useState(() =>
         typeof window !== "undefined" ? window.location.hash || "#hero" : "#hero"
@@ -50,10 +55,7 @@ export default function Navigation() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const handleToggle = () => {
-        setIsOpen(prev => !prev)
-    }
-
+   
     return (
         <nav className="relative z-50">
             {/* Desktop */}
@@ -77,13 +79,7 @@ export default function Navigation() {
                 ))}
             </ul>
 
-            {/* Mobile button */}
-            <button
-                onClick={handleToggle}
-                className="md:hidden p-2 text-white relative z-60"
-            >
-                {isOpen ? <X /> : <Menu />}
-            </button>
+           
 
             {/* Fullscreen mobile menu */}
             <div
@@ -97,7 +93,7 @@ export default function Navigation() {
                     {navItems.map((el) => (
                         <li
                             key={el.key}
-                            onClick={() => setIsOpen(false)}
+                            onClick={handleToggle}
 
                         >
                             <Link href={el.href}>

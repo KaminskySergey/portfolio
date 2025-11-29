@@ -27,7 +27,7 @@ export default function SkillsSection() {
                                 type="button"
                                 onClick={() => handleChangeCategory(el)}
                                 className={cn(
-                                    'text-xl py-2 px-6 rounded-full font-semibold text-white cursor-pointer transition-all duration-300',
+                                    'text-xs py-1 px-3 md:text-xl md:py-2 md:px-6 rounded-full font-semibold text-white cursor-pointer transition-all duration-300',
                                     'hover:scale-105 hover:bg-blue-500 hover:shadow-lg',
                                     'active:scale-95',
                                     {

@@ -8,7 +8,6 @@ export default function StarBackground() {
     const [meteors, setMeteors] = useState<IMeteor[]>([]);
     const { resolvedTheme } = useTheme();
 
-    // Функции объявляем **до useEffect**
     const generateStars = () => {
         const numberOfStars = Math.floor((window.innerWidth * window.innerHeight) / 10000);
         const newStars: IStar[] = [];

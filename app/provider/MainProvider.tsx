@@ -15,9 +15,9 @@ export default function MainProvider({ children }: IMainProvider) {
 
 
       <ThemeProvider attribute="class" defaultTheme='dark' enableSystem={false}>
-        <StarBackground />
         <Header />
         <ToasterProvider />
+        <StarBackground />
         <main className='relative z-40'>
           {children}
         </main>
