@@ -32,9 +32,9 @@ export default function Header() {
                         {/* Mobile button */}
                         <button
                             onClick={handleToggle}
-                            className="md:hidden p-2 text-white relative z-60"
+                            className="md:hidden p-2  relative z-60"
                         >
-                            {isOpen ? <X /> : <Menu />}
+                            {isOpen ? <X className="text-white"/> : <Menu className="text-black dark:text-white"/>}
                         </button>
                     </div>
                 </div>
