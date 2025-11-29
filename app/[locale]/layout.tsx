@@ -21,14 +21,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   const title = messages["seo.title"] || "Serhii Kaminskyi – My Portfolio";
   const description = messages["seo.description"] || "Portfolio of Serhii Kaminskyi, a fullstack developer.";
-
+  const keywords = locale === "de"
+    ? ["Fullstack Entwickler", "Portfolio", "React", "NestJS", "NextJS", "PostgreSQL", "Prisma", "Webentwicklung", "Projekte", "Frontend Entwickler"]
+    : ["fullstack developer", "portfolio", "React", "NestJS", "NextJS", "PostgreSQL", "Prisma", "web development", "projects", "frontend developer"];
   const baseUrl = "https://portfolio-rho-silk-a0xo8gr3uc.vercel.app";
   const ogImage = `${baseUrl}/og-hero.png`;
   return {
     title,
     description,
     metadataBase: new URL(baseUrl),
-    keywords: ["fullstack developer", "portfolio", "React", "NestJS", "web development", "projects", "frontend developer"],
+    keywords,
     icons: {
       icon: "/favicon.ico",
       shortcut: "/favicon.ico",
