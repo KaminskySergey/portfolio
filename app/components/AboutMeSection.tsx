@@ -59,7 +59,7 @@ export default function AboutMeSection() {
                                     </div>
                                     <div className='flex flex-col items-start gap-2'>
                                         <h4 className='font-semibold text-lg'>{t('card1_title')}</h4>
-                                        <p className='text-start font-normal text-base'>{t('card2_desc')}</p>
+                                        <p className='text-start font-normal text-base'>{t('card1_desc')}</p>
                                     </div>
                                 </div>
                             </li>
