@@ -8,7 +8,7 @@ export const skillItems = [
   { name: "Redux", level: 90, category: "frontend" },
   { name: "Tailwind CSS", level: 90, category: "frontend" },
   { name: "NextAuth", level: 80, category: "frontend" },
-  { name: "Vue", level: 65, category: "frontend" },
+  { name: "Vue", level: 60, category: "frontend" },
 
   //   backend
   { name: "Node.js", level: 70, category: "backend" },
@@ -20,9 +20,9 @@ export const skillItems = [
   //   tools
   { name: "GitHub", level: 80, category: "tools" },
   { name: "Figma", level: 90, category: "tools" },
-  { name: "VS Code", level: 90, category: "tools" },
+  { name: "VS Code", level: 85, category: "tools" },
   { name: "Postman/Insomnia", level: 85, category: "tools" },
-  { name: "Jira", level: 80, category: "tools" },
+  { name: "Jira", level: 60, category: "tools" },
   { name: "Vercel", level: 90, category: "tools" },
 ];
 
